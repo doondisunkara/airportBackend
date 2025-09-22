@@ -12,7 +12,7 @@ exports.AppDataSource = new typeorm_1.DataSource({
     database: path_1.default.join(process.cwd(), "database.sqlite"),
     synchronize: true,
     logging: ["query", "error"],
-    entities: [__dirname + "/entity/*.ts"],
+    entities: [path_1.default.join(__dirname, "entity", "*.{ts,js}")],
     migrations: [],
     subscribers: [],
 });

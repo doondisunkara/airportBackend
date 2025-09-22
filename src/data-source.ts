@@ -7,7 +7,7 @@ export const AppDataSource = new DataSource({
     database: path.join(process.cwd(), "database.sqlite"),
     synchronize: true,
     logging: ["query", "error"],
-    entities: [__dirname + "/entity/*.ts"],
+    entities: [path.join(__dirname, "entity", "*.{ts,js}")],
     migrations: [],
     subscribers: [],
 })
